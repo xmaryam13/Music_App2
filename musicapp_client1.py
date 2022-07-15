@@ -23,6 +23,11 @@ filePathLabel = None
 global song_counter
 song_counter = 0
 
+
+for file in os.listdir('shared_files'):
+    filename = os.fsdecode(file)
+    listbox.insert(song_counter,filename)
+    song_counter = song_counter + 1
     
 def play():
     global song_selected
@@ -46,6 +51,19 @@ def stop():
     mixer.music.pause()
     infoLabel.configure(text= "")
     
+def resume():
+    global song_selected
+    
+    mixer.init()
+    mixer.music.load('shared_files'+song_selected)
+    mixer.music.play()
+    
+def pause():
+    global song_selected
+    pygame
+    mixer.init()
+    mixer.music.load('shared_files'+song_selected)
+    mixer.music.pause()
 
 
 
@@ -60,11 +78,6 @@ def musicWindow():
     
     listBox = Listbox(window, height = 10, width = 39, activestyle = 'dotbox',bg = 'LightSkyBlue', borderwidth = 2, font = ('Calibri',10))
     listBox.place(x=12,y=20)
-    
-    for file in os.listdir('shared_files'):
-    filename = os.fsdecode(file)
-    listbox.insert(song_counter,filename)
-    song_counter = song_counter + 1
     
     scrollbar1 = Scrollbar(listBox)
     scrollbar1.place(relheight = 1, relx=1)
@@ -84,6 +97,13 @@ def musicWindow():
     
     infoLabel = Label(window, text = '',fg = 'blue',font = ('Calibri',10))
     infoLabel.place(x=4,y=200)
+    
+    ResumeButton = Button(window,text='Resume',width = 10,bd=1,bg='SkyBlue',font=('Calibri',10),command=resume)
+    ResumeButton.place(x=50,y=250)
+    
+    PauseButton = Button(window,text='Pause Button',bd=1,bg='SkyBlue',font=('Calibri',10),command=pause)
+    PauseButton.place(x=230,y=250)    
+    
     
     window.mainloop()
     
