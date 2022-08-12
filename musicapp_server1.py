@@ -7,6 +7,11 @@ SERVER = None
 BUFFER_SIZE = 4096
 clients = {}
 
+is_dir_exists = os.path.isdir('shared_files') 
+print(is_dir_exists) 
+if(not is_dir_exists): 
+    os.makedirs('shared_files')
+
 
 def acceptConnection():
     global SERVER
