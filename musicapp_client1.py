@@ -6,8 +6,10 @@ from tkinter import filedialog
 from playsound import playsound
 import pygame
 from pygame import mixer 
-import os
-import time
+import ftplib
+import ntpath
+from ftplib import FTP 
+from pathlib import Path
 
 
 PORT = 8050
@@ -52,6 +54,7 @@ def resume():
     mixer.init()
     mixer.music.load('shared_files'+song_selected)
     mixer.music.play()
+    mixer.music.unpause()
     
 def pause():
     global song_selected
@@ -78,7 +81,7 @@ def musicWindow():
     listBox = Listbox(window, height = 10, width = 39, activestyle = 'dotbox',bg = 'LightSkyBlue', borderwidth = 2, font = ('Calibri',10))
     listBox.place(x=12,y=20)
     
-    for file in os.listdir('shared_files'):
+for file in os.listdir('shared_files'):
     filename = os.fsdecode(file)
     listbox.insert(song_counter,filename)
     song_counter = song_counter + 1
