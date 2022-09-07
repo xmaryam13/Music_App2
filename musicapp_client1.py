@@ -81,7 +81,7 @@ def musicWindow():
     listBox = Listbox(window, height = 10, width = 39, activestyle = 'dotbox',bg = 'LightSkyBlue', borderwidth = 2, font = ('Calibri',10))
     listBox.place(x=12,y=20)
     
-for file in os.listdir('shared_files'):
+    for file in os.listdir('shared_files'):
     filename = os.fsdecode(file)
     listbox.insert(song_counter,filename)
     song_counter = song_counter + 1
