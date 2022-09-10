@@ -82,9 +82,9 @@ def musicWindow():
     listBox.place(x=12,y=20)
     
     for file in os.listdir('shared_files'):
-    filename = os.fsdecode(file)
-    listbox.insert(song_counter,filename)
-    song_counter = song_counter + 1
+        filename = os.fsdecode(file)
+        listbox.insert(song_counter,filename)
+        song_counter = song_counter + 1
     
     scrollbar1 = Scrollbar(listBox)
     scrollbar1.place(relheight = 1, relx=1)
