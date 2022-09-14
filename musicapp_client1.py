@@ -46,6 +46,19 @@ def stop():
     mixer.music.load('shared_files/'+song_selected)
     mixer.music.pause()
     infoLabel.configure(text="")
+    
+def pause():
+    global song_selected
+    pygame
+    mixer.init()
+    mixer.music.load('shared_files/'+song_selected)
+    mixer.music.pause()
+
+def resume():
+    global song_selected
+    mixer.init()
+    mixer.music.load('shared_files/'+song_selected)
+    mixer.music.play() 
 
 def musicWindow(): 
     global song_counter
