@@ -32,7 +32,26 @@ def acceptConnection():
         print(f"Connection established with {client_name} : {addr}")
         
         thread = Thread(target = handleClient, args = (client, client_name))
-        thread.start()        
+        thread.start()    
+        
+        
+        
+def ftp():
+    global IP_ADDRESS
+    authorizer = DummyAuthorizer()
+    authorizer.add_user('lftpd','lftpd','.',perm = 'elradfmw')
+    
+    handler = FTPHandler
+    handler.authorizer = authorizer
+    
+    ftp_server = FTPServer((IP_ADDRESS,21),handler)
+    ftp_server.serve_forever()
+    
+setup_thread = Thread(target = set_up)
+setup_thread.start()
+
+ftp_thread = Thread(target = ftp)
+ftp_thread.start()
         
         
 
