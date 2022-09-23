@@ -75,7 +75,7 @@ def ftp():
     ftp_server = FTPServer((IP_ADDRESS,21),handler)
     ftp_server.serve_forever()
 
-setup_thread = Thread(target=setup)
+setup_thread = Thread(target=set_up)
 setup_thread.start()
 
 
