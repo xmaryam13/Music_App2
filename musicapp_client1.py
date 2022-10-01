@@ -155,10 +155,10 @@ def musicWindow():
 
        
     
-    Upload=Button(window,text="Upload",width=10,bd=1,bg='SkyBlue', font = ("Calibri",10))
+    Upload=Button(window,text="Upload",width=10,bd=1,bg='SkyBlue', font = ("Calibri",10), command = browseFiles)
     Upload.place(x=30,y=300)
     
-    Download =Button(window,text="Download",width=10,bd=1,bg='SkyBlue', font = ("Calibri",10))
+    Download=Button(window,text="Download",width=10,bd=1,bg='SkyBlue', font = ("Calibri",10), command = download)
     Download.place(x=200,y=300)
     
     infoLabel = Label(window, text= "",fg= "blue",bg='SkyBlue', font = ("Calibri",8))
