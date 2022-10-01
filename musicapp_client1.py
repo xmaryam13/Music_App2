@@ -147,7 +147,7 @@ def musicWindow():
     Stop=Button(window,text="Stop",bd=1,width=10,bg='SkyBlue', font = ("Calibri",10), command = stop)
     Stop.place(x=200,y=200)
     
-    esumeButton=Button(window,text="Resume", width=10,bd=1,bg='SkyBlue',font = ("Calibri",10), command = resume) 
+    ResumeButton=Button(window,text="Resume", width=10,bd=1,bg='SkyBlue',font = ("Calibri",10), command = resume)
     ResumeButton.place(x=30,y=225) 
     
     PauseButton=Button(window,text="Pause", width=10,bd=1,bg='SkyBlue',font = ("Calibri",10), command = pause) 
