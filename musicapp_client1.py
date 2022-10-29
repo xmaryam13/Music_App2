@@ -110,10 +110,10 @@ def pause():
     mixer.music.load('shared_files/'+song_selected)
     mixer.music.pause()
 
-def resume():
-    global song_selected
-    mixer.init()
-    mixer.music.play()
+def resume(): 
+    global song_selected mixer.init() 
+    mixer.music.load('shared_files/'+song_selected) 
+    mixer.music.play() 
     mixer.music.unpause()
     
 def musicWindow(): 
